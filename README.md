@@ -6,5 +6,5 @@ C++
 ## 文件结构
 problem.md内为题目描述。  
 solution.cpp内为解答，其中class Solution为提交部分，main函数为简单的测试。
-## 目录
+## 题目列表
 [6. 旋转数组的最小数字](./JZ6)
