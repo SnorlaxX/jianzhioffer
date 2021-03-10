@@ -20,6 +20,7 @@ public:
         }else{
             return true;
         }
+        //或直接 return s.empty();
     }
 
 private:
