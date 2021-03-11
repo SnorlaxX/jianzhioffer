@@ -41,15 +41,31 @@ public:
         // return s.top();
 
         //数组
-        vector<ListNode *> s;
-        ListNode *pTmp = pHead;
-        while(pTmp){
-            s.push_back(pTmp);
-            pTmp = pTmp->next;
+        // vector<ListNode *> s;
+        // ListNode *pTmp = pHead;
+        // while(pTmp){
+        //     s.push_back(pTmp);
+        //     pTmp = pTmp->next;
+        // }
+        // if(k>s.size())
+        //     return nullptr;
+        // return s[s.size()-k];
+
+        ListNode *pa, *pb;
+        pa = pHead;
+        pb = pHead;
+        while(k){
+            if(pa==nullptr){
+                return nullptr;
+            }
+            pa = pa->next;
+            k--;
         }
-        if(k>s.size())
-            return nullptr;
-        return s[s.size()-k];
+        while(pa){
+            pa = pa->next;
+            pb = pb->next;
+        }
+        return pb;
     }
 };
 
