@@ -1,7 +1,5 @@
 #include <iostream>
 using namespace std;
-#include <stack>
-#include <vector>
 
 
 struct ListNode {
