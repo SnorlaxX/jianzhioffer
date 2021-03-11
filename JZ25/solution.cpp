@@ -14,6 +14,7 @@ struct RandomListNode {
 class Solution {
 public:
     RandomListNode* Clone(RandomListNode* pHead) {
+        /*O(n^2) 
         RandomListNode *p = pHead;
         RandomListNode *ret = new RandomListNode(0);
         RandomListNode *retTmp = ret;
@@ -42,7 +43,40 @@ public:
             index++;
             retTmp = retTmp->next;
         }
-        return ret->next;
+        return ret->next; 
+        */
+        if(pHead == NULL)
+            return NULL;
+        RandomListNode *p = pHead;
+        while (p){  //生成新的结点，同时将新结点插入到旧结点后面
+            RandomListNode *pNew = new RandomListNode(p->label);
+            pNew->next = p->next;
+            pNew->random = p->random;
+            RandomListNode *ptmp = p->next;
+            p->next = pNew;
+            p = ptmp;
+        }
+        p = pHead->next;
+        while(p){   //更改新结点的random指针
+            if(p->random){
+                p->random = p->random->next;
+            }
+            if(p->next){
+                p = p->next->next;
+            }else{
+                break;
+            }
+        }
+        p = pHead;
+        RandomListNode *ret = p->next;
+        while(p){   //更改新结点的next指针。
+            RandomListNode *tmp = p->next;
+            if(p->next){              
+                p->next = p->next->next;
+            }
+            p = tmp;
+        }
+        return ret;
     }
 };
 
