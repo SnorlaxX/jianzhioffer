@@ -29,6 +29,7 @@ public:
        for (int i = 2; i <= n; i++){
            res = (res + m) % i; //左为f(i, m)，右为上一次的结果即f(i-1, m);
        }
+       return res;
     }
 };
 
