@@ -4,7 +4,8 @@
 ## 使用语言
 C++
 ## 文件结构
-problem.md内为题目描述。  
+各题目子文件夹内：  
+readme.md内为题目描述。  
 solution.cpp内为解答，其中class Solution为提交部分，main函数为简单的测试。
 ## 题目列表
 [1. 二维数组中的查找](./JZ%201)
