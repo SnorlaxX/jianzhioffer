@@ -55,12 +55,11 @@ public:
                 while(p->next && p->next->val == tmp){
                     p->next = p->next->next;
                 }
-            }
-            else{
+            }else{
                 p = p->next;
             }
         }
-        return pHead;
+        return newNode->next;
     }
 };
 
