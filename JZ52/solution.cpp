@@ -16,8 +16,8 @@ public:
         for (int j = 2; j < n; j+=2){
             dp[0][j] = dp[0][j - 2] && pattern[j - 1] == '*';
         }
-        for (int i = 0; i < m; i++){
-            for (int j = 0; j < n; j++){
+        for (int i = 1; i < m; i++){
+            for (int j = 1; j < n; j++){
                 if(pattern[j-1] == '*'){
                     if(dp[i][j-2]){
                         dp[i][j] = true;
